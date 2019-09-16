@@ -66,6 +66,8 @@
 ![alt text](./Images/13.png "Allocate")
 
 
+* Associate the elastic IP to the Instance
+
 ![alt text](./Images/14.png "Allocate")
 
 
@@ -73,3 +75,27 @@
 
 
 ![alt text](./Images/16.png "Allocate")
+
+
+5. Connecting to Instance 
+
+* Start the Instance
+
+![alt text](./Images/17.png "Start Instance")
+
+
+* Connect to the Instance
+
+![alt text](./Images/18.png "Connect")
+
+* Change the permission of Private Key
+
+![alt text](./Images/19.png "Permissions")
+
+* Connect using SSH
+
+```
+ssh -i "*.pem" ubuntu@public-dns-name
+```
+
+![alt text](./Images/20.png "SSH")
