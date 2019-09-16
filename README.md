@@ -471,3 +471,19 @@ $ hdfs dfs -cat WordCount/output/part-r-00000
 
 ![alt text](./Images/47.png "Input")
 
+
+## Make sure to stop Hadoop services and AWS Instance before logout
+
+### To stop Hadoop Services
+
+```
+$HADOOP_HOME/sbin/mr-jobhistory-daemon.sh stop historyserver
+$HADOOP_HOME/sbin/stop-all.sh
+```
+
+![alt text](./Images/48.png "Stop")
+
+### To stop AWS Instance
+
+![alt text](./Images/49.png "Stop")
+
