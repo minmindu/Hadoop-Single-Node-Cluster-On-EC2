@@ -117,9 +117,25 @@ sudo nano /etc/hostname
 ![alt text](./Images/23.png "Hostname")
 
 
-8. Reboot
+8. Reboot and Reconnect to Instance
 ```
 sudo reboot
 ```
 ![alt text](./Images/24.png "Reboot")
+
+
+```
+ssh -i "*.pem" ubuntu@public-dns-name
+```
+
+![alt text](./Images/25.png "SSH")
+
+
+9. Install Open JDK 8
+
+```
+sudo apt install openjdk-8-jdk
+```
+
+![alt text](./Images/26.png "JDK")
 
