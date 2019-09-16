@@ -4,8 +4,11 @@
 
 ![alt text](https://mapr.com/products/apache-hadoop/assets/hadoop-logo.png "Hadoop Logo")
 
-#### Prerequisites
+### Prerequisites
 * AWS Acount
 * Terminal [(If On Windows UNIX-Like terminal)](https://itsfoss.com/run-linux-commands-in-windows/)
 * Stable Internet Connection
 
+### Setting up of Instance in AWS EC2
+1. Login to AWS
+![alt text](../Images/1.png "AWS Educate Homepage")
