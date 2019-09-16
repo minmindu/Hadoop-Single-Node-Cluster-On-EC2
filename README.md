@@ -99,3 +99,27 @@ ssh -i "*.pem" ubuntu@public-dns-name
 ```
 
 ![alt text](./Images/20.png "SSH")
+
+
+![alt text](./Images/21.png "Login 1")
+
+6. Update the packages of AMI (Amazon Machine Image)
+```
+sudo apt update
+sudo apt upgrade
+```
+![alt text](./Images/22.png "Update")
+
+7. Change Hostname to *hadoop*
+```
+sudo nano /etc/hostname
+```
+![alt text](./Images/23.png "Hostname")
+
+
+8. Reboot
+```
+sudo reboot
+```
+![alt text](./Images/24.png "Reboot")
+
