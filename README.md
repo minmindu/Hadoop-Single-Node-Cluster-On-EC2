@@ -50,4 +50,26 @@
 ![alt text](./Images/10.png "Pem")
 
 
-* 
+* Launch the Insatance 
+
+![alt text](./Images/11.png "Launch Instance")
+
+
+4. Assign Elastic IP to Instance
+
+* Navigate to Elastic IP
+
+![alt text](./Images/12.png "Elastic IP")
+
+* Allocate IP Address
+
+![alt text](./Images/13.png "Allocate")
+
+
+![alt text](./Images/14.png "Allocate")
+
+
+![alt text](./Images/15.png "Allocate")
+
+
+![alt text](./Images/16.png "Allocate")
