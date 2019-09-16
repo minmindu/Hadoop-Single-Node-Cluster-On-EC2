@@ -477,8 +477,8 @@ $ hdfs dfs -cat WordCount/output/part-r-00000
 ### To stop Hadoop Services
 
 ```
-$HADOOP_HOME/sbin/mr-jobhistory-daemon.sh stop historyserver
-$HADOOP_HOME/sbin/stop-all.sh
+$ $HADOOP_HOME/sbin/mr-jobhistory-daemon.sh stop historyserver
+$ $HADOOP_HOME/sbin/stop-all.sh
 ```
 
 ![alt text](./Images/48.png "Stop")
@@ -487,3 +487,4 @@ $HADOOP_HOME/sbin/stop-all.sh
 
 ![alt text](./Images/49.png "Stop")
 
+-- Yesaswi
