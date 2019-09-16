@@ -24,3 +24,18 @@
 2.  Navigate to EC2
 
 ![alt text](./Images/5.png "Navigate to AWS Account")
+
+
+3. Launch an Instance
+
+![alt text](./Images/6.png "Launch Instance")
+
+* Choose Ubuntu Server 18.04 LTS as Amazon Machine Image
+
+![alt text](./Images/7.png "Ubuntu AMI")
+
+
+* Choose t2.large as instance type (Recommended), if not you can go with other configuration
+
+![alt text](./Images/8.png "Instance Type")
+
