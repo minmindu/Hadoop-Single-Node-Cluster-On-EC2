@@ -39,3 +39,15 @@
 
 ![alt text](./Images/8.png "Instance Type")
 
+
+* Make sure the security group has all traffic allowed to inbound and outbound.
+
+![alt text](./Images/9.png "Security Group")
+
+
+* Generate a Private Key file (.pem)
+
+![alt text](./Images/10.png "Pem")
+
+
+* 
