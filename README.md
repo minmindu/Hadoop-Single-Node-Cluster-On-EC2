@@ -11,4 +11,4 @@
 
 ### Setting up of Instance in AWS EC2
 1. Login to AWS
-![alt text](../Images/1.png "AWS Educate Homepage")
+![alt text](./Images/1.png "AWS Educate Homepage")
