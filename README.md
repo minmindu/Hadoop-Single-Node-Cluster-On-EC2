@@ -95,7 +95,7 @@
 * Connect using SSH
 
 ```
-ssh -i "*.pem" ubuntu@public-dns-name
+$ ssh -i "*.pem" ubuntu@public-dns-name
 ```
 
 ![alt text](./Images/20.png "SSH")
@@ -105,27 +105,27 @@ ssh -i "*.pem" ubuntu@public-dns-name
 
 6. Update the packages of AMI (Amazon Machine Image)
 ```
-sudo apt update
-sudo apt upgrade
+$ sudo apt update
+$ sudo apt upgrade
 ```
 ![alt text](./Images/22.png "Update")
 
 7. Change Hostname to *hadoop*
 ```
-sudo nano /etc/hostname
+$ sudo nano /etc/hostname
 ```
 ![alt text](./Images/23.png "Hostname")
 
 
 8. Reboot and Reconnect to Instance
 ```
-sudo reboot
+$ sudo reboot
 ```
 ![alt text](./Images/24.png "Reboot")
 
 
 ```
-ssh -i "*.pem" ubuntu@public-dns-name
+$ ssh -i "*.pem" ubuntu@public-dns-name
 ```
 
 ![alt text](./Images/25.png "SSH")
@@ -134,8 +134,44 @@ ssh -i "*.pem" ubuntu@public-dns-name
 9. Install Open JDK 8
 
 ```
-sudo apt install openjdk-8-jdk
+$ sudo apt install openjdk-8-jdk
 ```
 
 ![alt text](./Images/26.png "JDK")
+
+10. Download and Install Hadoop
+
+* Go to Downloads page of Hadoop
+
+![alt text](./Images/27.png "Hadoop Download Page")
+
+
+* Copy the US mirror link
+
+![alt text](./Images/28.png "US Mirror")
+
+* Download in the Instance
+
+```
+$ wget <link> -P ~/Downloads
+```
+![alt text](./Images/29.png "Wget")
+
+
+* Extract the package
+
+```
+$ sudo tar zxvf ~/Downloads/hadoop-* -C /usr/local
+```
+
+![alt text](./Images/30.png "Extract")
+
+
+* Rename the folder
+
+```
+$ sudo mv /usr/local/hadoop-* /usr/local/hadoop
+```
+
+![alt text](./Images/31.png "Rename")
 
