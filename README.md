@@ -175,3 +175,45 @@ $ sudo mv /usr/local/hadoop-* /usr/local/hadoop
 
 ![alt text](./Images/31.png "Rename")
 
+
+11. Setting up of Environment Variables
+
+* Open .bashrc file in your home directory with your favorite editor. Include the below lines.
+
+```
+$ nano ~/.bashrc
+```
+* For Hadoop
+
+```
+export HADOOP_HOME=/usr/local/hadoop
+export HADOOP_INSTALL=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export YARN_HOME=$HADOOP_HOME
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+```
+
+![alt text](./Images/32.png "Env Var")
+
+
+* For reflecting to current session with out restarting.
+
+```
+$ source ~/.bashrc
+```
+
+* Open hadoop-env.sh from $HADOOP_CONF_DIR
+
+```
+$ sudo nano $HADOOP_CONF_DIR/hadoop-env.sh
+```
+
+![alt text](./Images/33.png "Env Var")
+
+* Change Java Home and Hadoop Conf Dir
+
+![alt text](./Images/34.png "Env Var")
