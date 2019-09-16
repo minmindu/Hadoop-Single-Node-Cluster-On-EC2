@@ -271,3 +271,161 @@ $ sudo nano /etc/hosts
 * Add Instance IPV4 address with hostname (hadoop)
 
 ![alt text](./Images/36.png "SSH Config")
+
+
+13. Hadoop Configuration
+
+* In the configuration folder, edit core-site.xml.
+
+```
+$ sudo nano $HADOOP_CONF_DIR/core-site.xml
+```
+
+* Paste the following
+
+```
+<configuration>
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://<your namenode public dns name>:9000</value>
+  </property>
+</configuration>
+```
+
+* Edit yarn-site.xml.
+
+```
+$ sudo nano $HADOOP_CONF_DIR/yarn-site.xml
+```
+
+* Paste the following
+
+```
+<configuration>
+  <property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value><your namenode public dns name></value>
+  </property>
+</configuration>
+```
+
+* Copy mapred-site.xml from mapred-site.xml.template
+
+```
+$ sudo cp $HADOOP_CONF_DIR/mapred-site.xml.template $HADOOP_CONF_DIR/mapred-site.xml
+```
+
+* Edit the following
+
+```
+<configuration>
+  <property>
+    <name>mapreduce.jobtracker.address</name>
+    <value><your namenode public dns name>:54311</value>
+  </property>
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+</configuration>
+```
+
+* Edit hdfs-site.xml
+
+```
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:///usr/local/hadoop/data/hdfs/namenode</value>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:///usr/local/hadoop/data/hdfs/datanode</value>
+  </property>
+</configuration>
+```
+
+* Make namenode and datanode directories
+
+```
+$ sudo mkdir -p $HADOOP_HOME/data/hdfs/namenode
+$ sudo mkdir -p $HADOOP_HOME/data/hdfs/datanode
+```
+
+* Change the owner of HADOOP_HOME to ubuntu
+
+```
+$ sudo chown -R ubuntu $HADOOP_HOME
+```
+![alt text](./Images/37.png "CHOWN")
+
+
+* Change masters and slaves to hadoop
+
+```
+sudo nano $HADOOP_HOME/masters
+sudo nano $HADOOP_HOME/slaves
+```
+
+![alt text](./Images/38.png "slaves")
+
+
+#### Launch Hadoop Cluster
+
+* Format the file system, then start HDFS.
+
+```
+$ hdfs namenode -format
+$ $HADOOP_HOME/sbin/start-dfs.sh
+```
+
+![alt text](./Images/39.png "HDFS Format")
+
+
+* Start YARN
+
+```
+$ $HADOOP_HOME/sbin/start-yarn.sh
+```
+
+![alt text](./Images/40.png "Services")
+
+
+* Start the job history server.
+
+```
+$ $HADOOP_HOME/sbin/mr-jobhistory-daemon.sh start historyserver
+```
+* To see the Java processes (Hadoop daemons for instance)
+
+```
+$ jps
+```
+
+![alt text](./Images/41.png "JPS")
+
+#### Accessing NameNode using WebUI
+
+* For Namenode Overview
+
+```
+publicdns:50070
+```
+![alt text](./Images/42.png "Overview")
+
+
+* For Cluster Metrics
+
+```
+publicdns:8088
+```
+
+![alt text](./Images/43.png "Cluster Metrics")
