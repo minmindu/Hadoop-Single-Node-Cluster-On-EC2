@@ -429,3 +429,45 @@ publicdns:8088
 ```
 
 ![alt text](./Images/43.png "Cluster Metrics")
+
+
+### Running a sample mapreduce
+
+* Creating an input file
+
+```
+$ nano input
+```
+![alt text](./Images/44.png "Input")
+
+* Creating a Directory in HDFS
+
+```
+$ hdfs dfs -mkdir -p WordCount/input
+```
+
+* Copyinng file from Local File System to HDFS
+
+```
+$ hdfs dfs -put input WordCount/input
+```
+
+![alt text](./Images/45.png "Input")
+
+* Running MapReduce
+
+```
+$ hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.5.jar wordcount WordCount/input WordCount/output
+```
+
+![alt text](./Images/46.png "MapRed")
+
+
+* Output
+
+```
+$ hdfs dfs -cat WordCount/output/part-r-00000
+```
+
+![alt text](./Images/47.png "Input")
+
