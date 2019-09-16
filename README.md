@@ -217,3 +217,57 @@ $ sudo nano $HADOOP_CONF_DIR/hadoop-env.sh
 * Change Java Home and Hadoop Conf Dir
 
 ![alt text](./Images/34.png "Env Var")
+
+
+12. SSH
+
+* Copy .pem file to .ssh directory
+
+```
+$ cp <Path of .pem> ~/.ssh/ (If LINUX Or MacOS)
+
+For Windows:
+Locate .ssh directory and perform the same
+```
+
+* Create a config file in .ssh directory of local system (Not Instance)
+
+```
+$ nano ~/.ssh/config
+```
+
+* Enter the following into it
+
+```
+Host hadoop
+  HostName <publicDnsname>
+  User ubuntu
+  IdentityFile ~/.ssh/<.pem file name>
+```
+
+![alt text](./Images/35.png "SSH Config")
+
+* Copy the config and pem files to Instance .ssh directory
+
+```
+$ scp ~/.ssh/config hadoop:~/.ssh
+$ scp ~/.ssh/*.pem hadoop:~/.ssh
+```
+
+* Log in to NameNode, create a public key using ssh-keygen and copy it to authorized_keys
+
+```
+$ ssh hadoop
+$ ssh-keygen -f ~/.ssh/id_rsa -t rsa -P ""
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+```
+
+* Open /etc/hosts
+
+```
+$ sudo nano /etc/hosts
+```
+
+* Add Instance IPV4 address with hostname (hadoop)
+
+![alt text](./Images/36.png "SSH Config")
